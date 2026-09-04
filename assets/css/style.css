@@ -124,6 +124,8 @@ ul.papers li {
 
 ul.papers .venue { color: var(--muted); }
 
+.nb { white-space: nowrap; }
+
 .note { color: var(--muted); font-size: 13px; margin: 12px 0 0; }
 
 /* footer */
