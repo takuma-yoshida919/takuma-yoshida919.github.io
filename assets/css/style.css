@@ -153,6 +153,24 @@ ul.papers li {
 
 ul.papers .venue { color: var(--muted); }
 
+ul.roster {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+ul.roster li {
+  display: grid;
+  grid-template-columns: 15em 1fr;
+  gap: 0 12px;
+  padding: 4px 0;
+  border-top: 1px solid var(--line);
+}
+
+ul.roster li:first-child { border-top: 0; }
+
+ul.roster .term { color: var(--muted); font-size: 14px; }
+
 .nb { white-space: nowrap; }
 
 section p { margin: 0 0 13px; }
@@ -196,4 +214,5 @@ footer {
   .site-header .romaji { display: block; margin-left: 0; }
   .site-header .inner { align-items: flex-start; }
   .tabs { gap: 18px; }
+  ul.roster li { grid-template-columns: 1fr; padding: 8px 0; }
 }
