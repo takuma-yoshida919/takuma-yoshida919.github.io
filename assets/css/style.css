@@ -155,6 +155,7 @@ ul.roster {
   list-style: none;
   padding-left: 0;
   margin: 0;
+  border-bottom: 1px solid var(--line);
 }
 
 ul.roster li {
