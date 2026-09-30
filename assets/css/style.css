@@ -220,6 +220,9 @@ figcaption {
   color: var(--muted);
 }
 
+/* "left/right" in a caption becomes "top/bottom" once the panels stack */
+.stack { display: none; }
+
 /* footer */
 
 footer {
@@ -242,4 +245,6 @@ footer {
   .tabs { gap: 18px; }
   ul.roster li { grid-template-columns: 1fr; padding: 8px 0; }
   figure.pair .panels { grid-template-columns: 1fr; }
+  .side { display: none; }
+  .stack { display: inline; }
 }

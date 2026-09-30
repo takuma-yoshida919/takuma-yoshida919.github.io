@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=5">
+<link rel="stylesheet" href="assets/css/style.css?v=6">
 <link rel="canonical" href="https://takuma-yoshida919.github.io/research.html">
 <script data-goatcounter="https://takuma-yoshida.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
@@ -62,9 +62,9 @@
   <figure class="pair">
     <div class="panels">
       <img src="assets/img/smoothing.svg" width="400" height="330" alt="曲線の図。散布図に直線と平滑化曲線を当てはめたもの。直線はゆるい右上がりで谷を捉えられず、平滑化曲線は谷が一つある形をなぞっている。">
-      <img src="assets/img/contour.svg" width="400" height="330" alt="曲面の図。緯度と経度に見立てた平面に観測点が散らばり、そこから推定した面を等高線で描いている。高さの異なる二つの山がある。">
+      <img src="assets/img/contour.svg" width="400" height="330" alt="曲面の図。平面に観測点が散らばり、そこから推定した面を等高線で描いている。高さの異なる二つの山がある。">
     </div>
-    <figcaption>どちらもシミュレーションデータ。赤い点だけから、この等高線を描いています。</figcaption>
+    <figcaption><span class="side">左</span><span class="stack">上</span>：線形回帰では表しきれないデータの形も、ノンパラメトリック平滑化なら捉えられます。<br><span class="side">右</span><span class="stack">下</span>：曲面回帰の等高線図です。縦横を緯度・経度と見ると、データの空間的な構造が見えてきます。</figcaption>
   </figure>
   <p>滑らかにすることだけが目的ではありません。trend filtering のように、折れ曲がりやスパイクを残したまま推定する方法もあります。急に立ち上がった箇所が均されずに残るので、そこから異常検知につながることがあります。</p>
   <p>自由度が高いぶん、放っておくとノイズまで拾います。どこまで滑らかにするかを決める仕組みが要り、その選び方によって推定量の性質が変わります。収束の速さ、信頼区間の作り方、説明変数が多いときの扱いなどの問題がこのテーマにはたくさんあります。</p>
@@ -76,7 +76,7 @@
   <p>平均を説明する回帰に対して、分位点回帰は分布の位置を指定して説明します。指定できるのは、中央値、下位 10 パーセント、上位 1 パーセントなどです。それぞれについて、説明変数がどう効くかを別々に調べられます。</p>
   <figure>
     <img src="assets/img/quantile.svg" width="540" height="420" alt="右へ行くほどばらつきが大きくなる散布図に、0.05 から 0.95 までの 7 本の分位点回帰直線を引いた図。直線は右へ扇形に広がり、上側の直線ほど傾きが急になっている。">
-    <figcaption>シミュレーションデータに引いた 7 本の直線。傾きがそろわないのはなぜでしょうか。</figcaption>
+    <figcaption>さまざまな分位点で推定した直線です。分位点によって傾きが異なります。たとえば 0.9 分位点の直線は、データの約 90 パーセントがその下側に、約 10 パーセントが上側にくるように引かれています。</figcaption>
   </figure>
   <p>母子手帳の成長曲線が分かりやすい例です。あの図には真ん中の線だけでなく、下位 3 パーセントと上位 3 パーセントにあたる線も引かれています。真ん中の線だけでは、小さい子が小さいままなのか追いついているのかを判断できないからです。</p>
   <p>外れ値への強さも、平均への回帰との違いです。平均は少数の極端な値に引きずられますが、中央値や分位点はほとんど動きません。異常な値が混ざったデータでも推定が壊れにくいということです。逆に、上下のパーセント点で引いた帯から外れる点を探すという使い方もできます。外れ値を捨ててから解析するのではなく、外れ値そのものを対象にできます。</p>
