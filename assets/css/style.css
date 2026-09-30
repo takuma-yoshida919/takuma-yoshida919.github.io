@@ -200,6 +200,8 @@ figure { margin: 4px 0 18px; }
 figure img {
   display: block;
   width: 100%;
+  max-width: 540px;
+  margin: 0 auto;
   height: auto;
   border: 1px solid var(--line);
   border-radius: 4px;
