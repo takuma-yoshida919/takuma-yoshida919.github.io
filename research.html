@@ -15,7 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/style.css?v=3">
+<link rel="stylesheet" href="assets/css/style.css?v=5">
 <link rel="canonical" href="https://takuma-yoshida919.github.io/research.html">
 <script data-goatcounter="https://takuma-yoshida.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
@@ -59,6 +59,13 @@
   <p>回帰分析では、ふつう「y = a + bx」のように式の形を先に決めます。ノンパラメトリック平滑化は、その形を決めずにデータから推定する方法です。</p>
   <p>たとえば気温と電力需要の関係は直線になりません。暑くても寒くても需要は増えるので、谷が一つある曲線になります。直線を当てはめると、この構造は見えなくなります。スプラインやカーネル法を使えば、形を仮定せずに曲線そのものを取り出せます。</p>
   <p>3 次元空間に散らばった離散的な点群から、滑らかな曲面を生成するという問題もあります。測定された点は飛び飛びで誤差も乗っていますが、その間を埋めて一つの連続な形として取り出します。</p>
+  <figure class="pair">
+    <div class="panels">
+      <img src="assets/img/smoothing.svg" width="400" height="330" alt="曲線の図。散布図に直線と平滑化曲線を当てはめたもの。直線はゆるい右上がりで谷を捉えられず、平滑化曲線は谷が一つある形をなぞっている。">
+      <img src="assets/img/surface.svg" width="400" height="330" alt="曲面の図。緯度と経度に見立てた平面上に観測点が散らばり、そこから推定した曲面に高さの異なる二つの山がある。">
+    </div>
+    <figcaption>どちらもシミュレーションデータです。曲線の図は、直線を当てはめると右へ行くほどゆるやかに増えるだけに見え、左側で値が高いことは消えてしまう例です。平滑化曲線は、谷が一つある形をそのまま取り出しています。曲面の図は、緯度と経度に見立てた平面に散らばった観測点（赤い点）から、thin plate spline で曲面を推定した例です。平面を当てはめたのでは見えない二つの山が現れます。</figcaption>
+  </figure>
   <p>滑らかにすることだけが目的ではありません。trend filtering のように、折れ曲がりやスパイクを残したまま推定する方法もあります。急に立ち上がった箇所が均されずに残るので、そこから異常検知につながることがあります。</p>
   <p>自由度が高いぶん、放っておくとノイズまで拾います。どこまで滑らかにするかを決める仕組みが要り、その選び方によって推定量の性質が変わります。収束の速さ、信頼区間の作り方、説明変数が多いときの扱いなどの問題がこのテーマにはたくさんあります。</p>
   <p class="eg"><b>研究のキーワード</b>異常検知、カーネル法、加法モデル、曲面生成、特徴量選択、trend filtering</p>

@@ -193,6 +193,31 @@ section p:last-child { margin-bottom: 0; }
 
 .note { color: var(--muted); font-size: 13px; margin: 12px 0 0; }
 
+/* figures */
+
+figure { margin: 4px 0 18px; }
+
+figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+figure.pair .panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+figcaption {
+  margin-top: 8px;
+  font-size: 13px;
+  line-height: 1.7;
+  color: var(--muted);
+}
+
 /* footer */
 
 footer {
@@ -214,4 +239,5 @@ footer {
   .site-header .inner { align-items: flex-start; }
   .tabs { gap: 18px; }
   ul.roster li { grid-template-columns: 1fr; padding: 8px 0; }
+  figure.pair .panels { grid-template-columns: 1fr; }
 }
