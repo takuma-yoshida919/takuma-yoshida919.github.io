@@ -33,7 +33,7 @@ a:hover { text-decoration: underline; }
 }
 
 .site-header .inner {
-  max-width: 820px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 24px;
   display: flex;
@@ -91,7 +91,7 @@ a:hover { text-decoration: underline; }
 /* layout */
 
 main {
-  max-width: 820px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 24px 64px;
 }
@@ -140,7 +140,7 @@ dl.profile dd { margin: 0; }
 
 .profile-wrap {
   display: grid;
-  grid-template-columns: 1fr 260px;
+  grid-template-columns: 1fr 340px;
   gap: 0 28px;
   align-items: start;
 }
@@ -252,7 +252,7 @@ figcaption {
 /* footer */
 
 footer {
-  max-width: 820px;
+  max-width: 960px;
   margin: 0 auto;
   padding: 0 24px 40px;
   color: var(--muted);
@@ -266,7 +266,7 @@ footer {
   section { padding: 20px 18px; }
   dl.profile { grid-template-columns: 1fr; gap: 0; }
   .profile-wrap { grid-template-columns: 1fr; }
-  figure.portrait { margin-top: 18px; max-width: 360px; }
+  figure.portrait { margin-top: 18px; }
   dl.profile dt { margin-top: 10px; font-size: 13px; }
   .site-header .romaji { display: block; margin-left: 0; }
   .site-header .inner { align-items: flex-start; }
