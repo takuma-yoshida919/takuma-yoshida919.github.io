@@ -136,6 +136,32 @@ dl.profile dt {
 
 dl.profile dd { margin: 0; }
 
+/* profile list on the left, photo on the right */
+
+.profile-wrap {
+  display: grid;
+  grid-template-columns: 1fr 260px;
+  gap: 0 28px;
+  align-items: start;
+}
+
+figure.portrait { margin: 4px 0 0; }
+
+figure.portrait img {
+  display: block;
+  width: 100%;
+  max-width: none;
+  height: auto;
+  border: 0;
+  border-radius: 4px;
+}
+
+figure.portrait figcaption {
+  margin-top: 6px;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
 /* lists */
 
 ul { margin: 0; padding-left: 1.3em; }
@@ -239,6 +265,8 @@ footer {
   body { font-size: 14px; }
   section { padding: 20px 18px; }
   dl.profile { grid-template-columns: 1fr; gap: 0; }
+  .profile-wrap { grid-template-columns: 1fr; }
+  figure.portrait { margin-top: 18px; max-width: 360px; }
   dl.profile dt { margin-top: 10px; font-size: 13px; }
   .site-header .romaji { display: block; margin-left: 0; }
   .site-header .inner { align-items: flex-start; }
